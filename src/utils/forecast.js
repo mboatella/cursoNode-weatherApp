@@ -9,7 +9,7 @@ const forecast = (latitude, longitude, callback) => {
         } else if (body.error) {
             callback('No se pudieron localizar las coordenadas ingresadas', undefined)
         } else {
-            callback(undefined, `${body.current.weather_descriptions[0]}. Hacen ${body.current.temperature} grados y la sensacion termica es de ${body.current.feelslike} grados.`)
+            callback(undefined, `${body.current.weather_descriptions[0]}. Hacen ${body.current.temperature} grados y la sensacion termica es de ${body.current.feelslike} grados. Probabilidad de lluvia: ${body.current.precip}%, y la humedad es del ${body.current.humidity}%`)
                 // description: body.current.weather_descriptions[0],
                 // temperature: body.current.temperature,
                 // sensation: body.current.feelslike
